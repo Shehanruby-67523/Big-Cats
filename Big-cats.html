@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Big Cats</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="CSS/begin-page.css">  
+</head>
+<body>
+  <header class="HEAD">
+      <img class="logo" src="Images/Front_Page/LOGO.png" alt="LOGO">
+      <h1 style="display: inline-block;">
+      <div class="middle-column">Big Cats: Kings of the Wild</div>
+    </h1>
+    <nav>
+        <a class="hello" href="#about">About Big Cats</a>
+        <a class="hello" href="#pantherine">Pantherine Big Cats</a>
+        <a class="hello" href="#Non-pantherine">Non-Pantherine Big Cats</a>
+        <a href="Our_Team.html">Our Team</a>
+        <a href="contact_us.html">Contact Us</a>
+        <a href="Game.html">Game</a>
+    </nav>
+  </header>
+  <main>
+    <div class="slide-border">
+      <div class="slideshow-container">
+      <div class="mySlides">
+          <img class="slide-img" src="Images/Front_Page/Front_Page_1.JPG" alt="Image 1">
+      </div>
+      <div class="mySlides">
+          <img class="slide-img" src="Images/Front_Page/Front_Page_2.JPG" alt="Image 2">
+      </div>
+      <div class="mySlides">
+          <img class="slide-img" src="Images/Front_Page/Front_Page_3.JPG" alt="Image 3">
+      </div>
+      <div class="mySlides">
+          <img class="slide-img" src="Images/Front_Page/Front_Page_4.JPG" alt="Image 4">
+      </div>
+      <div class="mySlides">
+          <img class="slide-img" src="Images/Front_Page/Front_Page_5.JPG" alt="Image 5">
+      </div>
+      <div class="mySlides">
+          <img class="slide-img" src="Images/Front_Page/Front_Page_6.JPG" alt="Image 6">
+      </div>
+      <div class="mySlides">
+          <img class="slide-img" src="Images/Front_Page/Front_Page_7.JPG" alt="Image 7">
+      </div>
+      <div class="mySlides">
+          <img class="slide-img" src="Images/Front_Page/Front_Page_8.JPG" alt="Image 8">
+      </div>
+  
+      <!-- Navigation Buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+  <div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+    <span class="dot" onclick="currentSlide(7)"></span>
+    <span class="dot" onclick="currentSlide(8)"></span>
+  </div>
+    </div>
+    <section>
+      <header id="about">
+        <h2>About Big Cats</h2>
+      </header>
+      <p class="parag">Simply, big cats are the large members of the cat family. They live in diverse habitats like tropical rainforests, jungles, savannahs, snow forests, and deserts. We can find them in every region except the Arctic and Antarctic. All big cats are carnivores, and many are apex predators in their regions, meaning they sit at the top of the food chain.</p>
+
+      <p class="parag">The term "big cat" typically refers to seven magnificent creatures: the five members of the Panthera genus - <b>tiger, lion, jaguar, leopard, and snow leopard</b> - in addition, the non-pantherine <b>cougar</b> and the speedy <b>cheetah.</b></p>
+      
+      <img class="poster" src="Images/Front_Page/Big_Cat_Poster.JPG">
+      <p class="parag">Learn more about these <b>big cats</b></p>
+
+      <div class="new">
+      <header id="pantherine">
+        <a class="anchor" href="Pantherine.html"><i class="fas fa-paw"></i> Pantherine Big Cats</a>
+      </header>
+      <header id="Non-pantherine">
+        <a class="anchor" href="non-Pantherine.html"><i class="fas fa-paw"></i> Non-Pantherine Big Cats</a>
+     </header>
+    </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="left-column">
+        <h2>About Us</h2>
+        <p>Our mission is to educate and inspire people about the importance and beauty of big cats.</p>
+      </div>
+      <div class="middle-column">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="Our_Team.html">Our Team</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="right-column">
+        <h2>Follow Us</h2>
+        <ul class="social-icons">
+          <li><a href="https://youtube.com/@safarisammie?si=iDkBAkmcLXfPDg-9"><i class="fab fa-youtube"></i></a></li>
+          <li><a href="https://twitter.com/bigcatsinfo"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://www.instagram.com/bigcatsphotos/"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2024 Big Cats Website. All rights reserved.</p>
+  </footer>
+  <script>
+    // Select navigation links
+    const navLinks = document.querySelectorAll('.hello');
+
+    // Add click event listener to each link
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default jump
+        const targetSection = document.getElementById(this.getAttribute('href').slice(1)); // Get target section ID
+        targetSection.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to section
+      });
+    });
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1} 
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block"; 
+      dots[slideIndex-1].className += " active";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Big Cats Quiz Game</title>
+    <link rel="stylesheet" href="CSS/Game.css">
+</head>
+<body background="Images/Game/Game_background.JPG">
+    <h1>Big Cats Quiz Game</h1>
+    <div id="game-container">
+        <h2 id="question"></h2>
+        <ul id="answers"></ul>
+        <p id="score">Score: 0</p>
+        <p id="previous-score"></p> <!-- Element to show previous score -->
+        <p id="final-message"></p> <!-- Element to show final score message -->
+    </div>
+    <div class="copyright">
+        <footer>
+          <p class="copyright">&copy; 2024 Big Cats Website. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+      const questionElement = document.getElementById('question');
+      const answersElement = document.getElementById('answers');
+      const scoreElement = document.getElementById('score');
+      const finalMessageElement = document.getElementById('final-message');
+      const previousScoreElement = document.getElementById('previous-score');
+
+      let currentQuestionIndex = 0;
+      let score = 0;
+
+      // Retrieve the previous score from localStorage
+      const previousScore = localStorage.getItem('previousScore');
+
+      // Display the previous score if available, otherwise hide the element
+      if (previousScore !== null) {
+          previousScoreElement.textContent = `Previous Score: ${previousScore}`;
+      } else {
+          previousScoreElement.style.display = 'none'; // Hide the element if no score is available
+      }
+
+
+      const questions = [
+          {
+              question: "1.Which is the largest cat species?",
+              answers: ["A.Tiger", "B.Lion", "C.Leopard", "D.Cheetah"],
+              correctAnswer: "A.Tiger"
+          },
+          {
+              question: "2.Which is the fastest cat species?",
+              answers: ["A.Lion", "B.Jaguar", "C.Cheetah", "D.Cougar"],
+              correctAnswer: "C.Cheetah"
+          },
+          {
+              question: "3.Which big cat is the only one with a mane?",
+              answers: ["A. Tiger","B. Lion","C. Leopard","D. Cheetah"],
+              correctAnswer: "B. Lion"
+          },
+          {
+              question: "4.Which big cat lives in the snow?",
+              answers: ["A. Tiger","B. Lion","C. Leopard","D. Snow Leopard"],
+              correctAnswer: "D. Snow Leopard"
+          },
+          {
+              question: "5.Which big cat is known for its retractable claws?",
+              answers: ["A. Tiger","B. Lion","C. Leopard","D. Cheetah"],
+              correctAnswer: "D. Leopard"
+          },
+          {
+              question: "6.Which big cat is primarily a nocturnal hunter?",
+              answers: ["A. Tiger","B. Lion","C. Leopard","D. Cheetah"],
+              correctAnswer: "A. Tiger"
+          },
+          {
+              question: "7.Where do snow leopards primarily live?",
+              answers: ["A. Africa","B. Asia","C. North America","D. South America"],
+              correctAnswer: "B. Asia"
+          },
+          {
+              question: "8.Which big cat hunts in groups?",
+              answers: ["A. Tiger","B. Lion","C. Leopard","D. Jaguar"],
+              correctAnswer: "B. Lion"
+          },
+          {
+              question: "9.What is the primary diet of a cougar?",
+              answers: ["A. Fish","B. Insects","C. Deer","D. Birds"],
+              correctAnswer: "C. Deer"
+          },
+          {
+              question: "10.Which big cat is known for its ability to climb trees?",
+              answers: ["A. Tiger","B. Lion","C. Leopard","D. Cheetah"],
+              correctAnswer: "C. Leopard"
+          },
+          {
+              question: "11.Which big cat has the longest tail?",
+              answers: ["A. Tiger","B. Lion","C. Leopard","D. Cheetah"],
+              correctAnswer: "C. Leopard"
+          },
+          {
+              question: "12.Which big cat has the largest paws?",
+              answers: ["A. Tiger","B. Lion","C. Leopard","D. Cheetah"],
+              correctAnswer: "A. Tiger"
+          },
+          {
+              question: "13.Which big cat has the most prominent ears?",
+              answers: ["A. Tiger","B. Lion","C. Leopard","D. Cheetah"],
+              correctAnswer: "A. Tiger"
+          },
+          {
+              question: "14.Which big cat has the most powerful jaws?",
+              answers: ["A. Tiger","B. Lion","C. Leopard","D. Cheetah"],
+              correctAnswer:"A. Tiger"
+          },
+          {
+              question: "15.Which big cat has the shortest claws?",
+              answers:["A. Tiger","B. Lion","C. Leopard","D. Cheetah"],
+              correctAnswer:"D. Cheetah"
+          }
+      ];
+
+      function loadQuestion() {
+          // Clear the final message
+          finalMessageElement.textContent = '';
+
+          // Load current question
+          const currentQuestion = questions[currentQuestionIndex];
+          questionElement.textContent = currentQuestion.question;
+
+          // Load answer choices
+          answersElement.innerHTML = '';
+          currentQuestion.answers.forEach(answer => {
+              const li = document.createElement('li');
+              li.textContent = answer;
+              li.addEventListener('click', () => checkAnswer(answer));   
+              answersElement.appendChild(li);
+          });
+      }
+
+      function checkAnswer(selectedAnswer) {
+          const currentQuestion = questions[currentQuestionIndex];
+
+          // Check if the selected answer is correct
+          if (selectedAnswer === currentQuestion.correctAnswer) {
+              score++;
+              scoreElement.textContent = `Score: ${score}`;
+          }
+
+          currentQuestionIndex++;
+
+          // Check if there are more questions, otherwise end the game
+          if (currentQuestionIndex < questions.length) {
+              loadQuestion();
+          } else {
+              // Game over, display final score and save to localStorage
+              finalMessageElement.textContent = `Game over! Your final score is ${score}.`;
+              questionElement.textContent = '';
+              answersElement.innerHTML = '';
+
+              // Store the current score as the previous score in localStorage
+              localStorage.setItem('previousScore', score);
+          }
+      }
+
+      // Load the first question
+      loadQuestion();
+
+      // Error handling
+      window.addEventListener('error', (event) => {
+          console.error('An error occurred:', event.error);
+      });
+    </script>
+</body>
+</html>

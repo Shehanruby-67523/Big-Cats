@@ -1,0 +1,267 @@
+body {
+  font-family: Roboto, sans-serif;
+  background-color: rgb(177, 250, 177);
+  margin: 0;
+  padding: 0;
+  animation: fadeIn 2.5s ease;
+}
+
+.parag {
+  text-align: justify;
+  font-size: 18px;
+  color: #2c3e50;
+  margin: 15px 0;
+  padding: 10px;
+  background-color: rgb(236, 240, 241,0.5);
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.HEAD {
+  background-color: green;
+  color: #fff;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+h1 {
+  margin-top: 30px;
+  font-weight: 700;
+  font-size: 40px;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.logo {
+  float: left;
+  margin-right: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+nav {
+  display: flex;
+  justify-content: right;
+  
+}
+
+nav a {
+  float: left;
+  display: inline-table;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+main {
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  clear: both;
+}
+
+section {
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+section h2 {
+  color: green;
+}
+
+section p {
+  line-height: 1.5;
+}
+
+section img {
+  display: block;
+  width: 600px;
+  height: 400px;
+  margin: 20px auto;
+  border-radius: 10%;
+  transition: transform 0.5s ease;
+}
+
+section img:hover {
+  transform: scale(1.1);
+}
+
+.new {
+  text-align: center;
+}
+
+footer {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left-column, .middle-column, .right-column {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-icons {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons li a {
+  color: white;
+  font-size: 20px;
+}
+
+.copyright {
+  margin-top: 20px;
+}
+
+footer {
+  background-color: green;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+footer ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.anchor {
+  display: inline-block;
+  width: 300px;
+  margin: 20px;
+  text-align: center;
+  padding: 10px;
+  background-color: green; 
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.anchor:hover {
+  background-color: #37ec4f; /* Brighter hover state */
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.slide-border {
+  background-color: rgb(0, 128, 0,0.3);
+  border-radius: 20px;
+  padding-top: 20px;
+}
+
+.slideshow-container {
+  max-width: 900px;
+  height: 550px;
+  position: relative;
+  margin-top: 20px;
+  margin-left: 200px;
+}
+
+.mySlides {
+  display: none;
+  transition: opacity 0.5s ease-in-out; /* Smooth transition */
+}
+
+.slide-img {
+  width: 900px;
+  height: 550px;
+  border-radius: 20px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px; 
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px; 
+}
+
+.prev .next :hover{
+  transform: scale(1.05);
+}
+.dot-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin: 0 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: rgb(0,128,0); 
+}
+

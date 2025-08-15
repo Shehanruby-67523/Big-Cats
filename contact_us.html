@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" href="CSS/Contact_us.css">
+</head>
+<body background="Images/National_Parks/Amazon_1.JPG">
+  <header class="HEAD">
+    <h1>Contact Us</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Get in Touch</h2>
+      <p>Have a question or want to provide feedback? You can contact us using the form below.</p>
+      <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+
+        <label for="phone">Telephone No:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required><br><br>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Enter your feedback" required></textarea><br><br>
+
+        <input type="submit" value="Send Feedback">
+      </form>
+
+      <div id="successMessage" class="feedback" style="display: none;">
+        <p>Your feedback added successfully!</p>
+        <p>Back to the main page:<a href="Big-cats.html">Click here</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="left-column">
+        <h2>About Us</h2>
+        <p>Our mission is to educate and inspire people about the importance and beauty of big cats.</p>
+      </div>
+      <div class="middle-column">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="Big-cats.html">Main Page</a></li>
+          <li><a href="Our_Team.html">Our Team</a></li>
+          <li><a href="Game.html">Game</a></li>
+        </ul>
+      </div>
+      <div class="right-column">
+        <h2>Follow Us</h2>
+        <ul class="social-icons">
+          <li><a href="https://youtube.com/@safarisammie?si=iDkBAkmcLXfPDg-9"><i class="fab fa-youtube"></i></a></li>
+          <li><a href="https://twitter.com/bigcatsinfo"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://www.instagram.com/bigcatsphotos/"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2024 Big Cats Website. All rights reserved.</p>
+  </footer>
+  <script>
+    const contactForm = document.getElementById ('contactForm');
+    const successMessage = document.getElementById ('successMessage');
+
+    contactForm.addEventListener ('submit', (event) => {
+      event.preventDefault();
+      successMessage.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
