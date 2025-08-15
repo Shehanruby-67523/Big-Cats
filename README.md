@@ -80,12 +80,3 @@ BIG CATS/
 ├── Snow_Leopard.html
 ├── Tiger.html
 └── README.md
-
-🚀 How to Run
-
-Clone this repository
-
-git clone https://github.com/yourusername/big-cats-web.git
-
-
-Open Big-cats.html in your browser to start exploring.
